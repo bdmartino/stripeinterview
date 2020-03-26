@@ -1,0 +1,39 @@
+.Form {
+  max-width: 500px;
+  margin-left: 300px;
+}
+
+.ProductImage {
+  max-height: 200px;
+}
+
+.CardSection {
+  margin-top: 30px;
+}
+
+.ConfirmButton {
+  background-color: #008CBA; /* Blue */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+button:disabled,
+button[disabled]{
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.StatusGreen {
+  margin-top: 15px;
+  color: green;
+}
+
+.StatusRed {
+  margin-top: 15px;
+  color: red;
+}

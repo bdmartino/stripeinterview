@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './CheckoutForm.css';
 import {useStripe, useElements, CardElement} from '@stripe/react-stripe-js';
 import axios from "axios";
 
@@ -21,8 +21,7 @@ export default function CheckoutForm() {
       }
 
       setDisableButton(true);
-
-      const intentResponse = await axios.get ("http://localhost:3001/secret", {});
+      const intentResponse = await axios.post ("http://localhost:4242/create-payment-intent", {});
 
       if (intentResponse.error) {
           console.log(intentResponse.error.message);
@@ -31,9 +30,6 @@ export default function CheckoutForm() {
         const result = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
               card: elements.getElement(CardElement),
-              billing_details: {
-                name: 'Jenny Rosen',
-              },
             }
           });
 
@@ -56,9 +52,7 @@ export default function CheckoutForm() {
             }
           }
         }
-
-        setDisableButton(false);
-  
+        setDisableButton(false); 
     };
 
     const [status, setStatus] = React.useState('');
@@ -68,7 +62,7 @@ export default function CheckoutForm() {
     return (
       <form className="Form" onSubmit={handleSubmit}>
           <h2>Price: $9.99</h2>
-          <img src="https://pics.drugstore.com/prodimg/352353/900.jpg" className="ProductImage"></img>
+          <img src="https://pics.drugstore.com/prodimg/352353/900.jpg" className="ProductImage" alt="purell"></img>
           <div className="CardSection"><CardSection /></div>
         <button className="ConfirmButton" disabled={!stripe || disableButton}>Confirm order</button>
         <div className= {statusColor}> { status }</div>

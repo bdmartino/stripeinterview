@@ -1,6 +1,7 @@
 const cors = require("cors")
 const express = require("express")
-const stripe = require('stripe')('sk_test_1lnWY4oViabcgN61ttEcp7Lp00Yp82Z3mL');
+const env = require("dotenv").config({ path: "../stripe-react-app/.env" });
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const app = express ();
 
@@ -8,8 +9,8 @@ const app = express ();
 app.use(express.json())
 app.use(cors())
 
-// get client secret
-app.get('/secret', async (req, res) => {
+// create payment intent and return client secret
+app.post('/create-payment-intent', async (req, res) => {
     const intent = await stripe.paymentIntents.create({
         amount: 999,
         currency: 'usd',
@@ -33,11 +34,11 @@ app.post('/webhook', bodyParser.raw({type: 'application/json'}), (request, respo
   switch (event.type) {
     case 'payment_intent.succeeded':
       const paymentIntent = event.data.object;
-      console.log('PaymentIntent was successful!')
       var stream = fs.createWriteStream("paymentsToFulfill.txt", {flags:'a'});
       stream.write(JSON.stringify(paymentIntent));
       stream.write("\n");
       stream.end();
+      console.log('PaymentIntent was successful!')
       break;
     case 'payment_method.attached':
       const paymentMethod = event.data.object;
@@ -58,6 +59,6 @@ app.get('/', async (req, res) => {
 })
 
 //Port listen
-app.listen(3001, () => {
-    console.log("Running on port 3001");
+app.listen(4242, () => {
+    console.log("Running on port 4242");
 })
