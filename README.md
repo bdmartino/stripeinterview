@@ -31,4 +31,4 @@ To run this project follow the following steps:
 
     `stripe trigger payment_intent.succeeded`
 7. Feel free to take a look at the paymentsToFulfill.txt file to see all successful payments being recorded.
-8. Also feel free to visition your [Stripe dashboard](https://dashboard.stripe.com/test/dashboard) and see the test transaction reflected there.
+8. Also feel free to visit your [Stripe dashboard](https://dashboard.stripe.com/test/dashboard) and see the test transaction reflected there.
