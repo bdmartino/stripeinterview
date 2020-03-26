@@ -1,6 +1,9 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Requirements: have Nodejs installed.
 
-Testing. Hello world!
+To run this project follow the following steps:
+1. Clone or download project
+2. Go to stripe-react-app and edit the .env file with your secret and publishable keys
+3. 
 
 ## Available Scripts
 
