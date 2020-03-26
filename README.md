@@ -5,12 +5,12 @@ To run this project follow the following steps:
 2. Go to stripe-react-app and edit the .env file with the secret and publishable keys from your Stripe account.
 3. On your terminal, go into the backend subdirectory, and enter the following commands to run the server:
 
-    `npm install`
+    `npm install` <br/>
     `npm start`
 
 4. On a separate tab, go into the stripe-react-app subdirectory, and enter the following commands to run the app:
 
-    `npm install`
+    `npm install` <br/>
     `npm start`
 
 5. On a separate tab, install the [Stripe CLI](https://stripe.com/docs/payments/handling-payment-events#build-your-own-webhook) with the following command:
