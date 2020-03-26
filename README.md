@@ -2,7 +2,7 @@ Requirements: have Nodejs installed.
 
 To run this project follow the following steps:
 1. Clone or download project
-2. Go to stripe-react-app and edit the .env file with the secret and publishable keys form your Stripe account.
+2. Go to stripe-react-app and edit the .env file with the secret and publishable keys from your Stripe account.
 3. On your terminal, go into the backend subdirectory, and enter the following commands to run the server:
 
     `npm install`
