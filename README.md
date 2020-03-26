@@ -26,7 +26,7 @@ To run this project follow the following steps:
     `stripe listen --forward-to http://localhost:4242/webhook`
 
 6. Now test away! There are two ways to test: <br/>
-    4a. Manually, go to [http://localhost:3000](http://localhost:3000), and then try out the experience using the [test cards] (https://stripe.com/docs/payments/accept-a-payment#web-test-integration) <br/>
+    4a. Manually, go to [http://localhost:3000](http://localhost:3000), and then try out the experience using the [test cards](https://stripe.com/docs/payments/accept-a-payment#web-test-integration) <br/>
     4b. Via command line, in a different terminal tab, enter the following command:
 
     `stripe trigger payment_intent.succeeded`
