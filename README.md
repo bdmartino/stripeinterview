@@ -1,4 +1,4 @@
-Requirements: have Nodejs installed.
+Requirements: have Nodejs installed. If not, download it [here](https://nodejs.org/en/).
 
 To run this project follow the following steps:
 1. Clone or download project
